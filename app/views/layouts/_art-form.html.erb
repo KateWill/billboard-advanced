@@ -1,0 +1,10 @@
+<div class="form-wrapper">
+
+<h1><%= @artist.id ? "Edit Artist Name" : "Create New Artist" %> </h1>
+
+  <%= form_for @artist do |a| %> 
+    <%= a.label :name %>
+    <%= a.text_field :name %>
+    <%= a.submit %>
+  <% end %>
+</div>

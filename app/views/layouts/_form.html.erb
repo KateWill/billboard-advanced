@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+<h1><%= @board.id ? "Edit Board" : "Create New Board" %> </h1>
+
+  <%= form_for @board do |b| %> 
+    <%= b.label :title %>
+    <%= b.text_field :title %>
+    <%= b.submit %>
+  <% end %>
+</div>

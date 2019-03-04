@@ -1,0 +1,2 @@
+class ChangeTitleToTitle < ApplicationRecord
+end

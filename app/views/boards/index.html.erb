@@ -1,0 +1,7 @@
+<h1>All Billboards</h1>
+
+<% @boards.each do |b| %>
+  <ul>
+    <li><%= link_to b.title, board_path(b) %>  |  <%= link_to 'Edit Board Title', edit_board_path(b) %>  |  <%= link_to "Delete Board", b, method: :delete  %></li>
+  </ul>
+<% end %>
