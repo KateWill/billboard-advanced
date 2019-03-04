@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artist_id: 1
+  billboard_id: 1
+  name: MyString
+  rank: 1
+  boards: one
+  artists: one
+
+two:
+  artist_id: 1
+  billboard_id: 1
+  name: MyString
+  rank: 1
+  boards: two
+  artists: two
