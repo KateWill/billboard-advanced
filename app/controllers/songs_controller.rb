@@ -11,18 +11,22 @@ class SongsController < ApplicationController
 
     if @song.save
       redirect_to [@board, @song]
+      # board_song_path(@board, @song)
     else
       render :new
     end
   end
 
+  def new
+    @song = @board.songs.new
+    #@song = Song.new
+    # render 'layouts/song-form'
+  end
+
   def show
   end
 
-  def new
-    @song = @board.songs.new
-    # render partial: 'layouts/song-form'
-  end
+  
 
   def edit
     # render partial: 'layouts/song-form'
@@ -51,17 +55,15 @@ class SongsController < ApplicationController
     @board = Board.find(params[:board_id])
   end 
 
-  # t.integer "artist_id"
-  # t.integer "billboard_id"
   # t.string "name"
-  # t.integer "rank"
-  # t.bigint "boards_id"
-  # t.bigint "artists_id"
+  # t.string "rank"
+  # t.bigint "board_id"
+  # t.bigint "artist_id"
   # t.datetime "created_at", null: false
   # t.datetime "updated_at", null: false
-  # t.index ["artists_id"], name: "index_songs_on_artists_id"
-  # t.index ["boards_id"], name: "index_songs_on_boards_id"
+  # t.index ["artist_id"], name: "index_songs_on_artist_id"
+  # t.index ["board_id"], name: "index_songs_on_board_id"
   def song_params
-    params.require(:song).permit(:artist_id, :billboard_id, :name, :rank, :boards_id, :artists_id )
+    params.require(:song).permit(:name, :rank)
   end
 end

@@ -16,6 +16,16 @@ class BoardsController < ApplicationController
   end
 
   def show
+    # @board.songs = @board.songs.order(:rank)
+    # @board.songs = @board.songs.sort_by { |song| song[:rank]}
+    # @board
+    # @board.songs.order(:rank)
+    # @board = Board.includes(:song).order("songs.rank asc")
+    # Board.all.by_rank
+    # Board.songs.by_rank
+    # @board.sort
+    @ranks = @board.by_rank(@board.songs)
+    # by_rank
   end
 
   def new

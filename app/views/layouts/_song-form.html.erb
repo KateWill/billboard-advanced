@@ -1,0 +1,12 @@
+<div class="form-wrapper">
+<h1>Song Form</h1>
+
+  <%= form_for [@board, @song]  do |s| %> 
+    <%= s.label :name %>
+    <%= s.text_field :name %>
+    <%= s.label :rank %>
+    <%= s.text_field :rank %>
+    <%= s.submit %>
+  <% end %>
+
+</div>

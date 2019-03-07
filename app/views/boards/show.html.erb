@@ -1,7 +1,14 @@
 <h1><%= @board.title %></h1>
 
-<ol>
-  <li>Song 1,</li>
-</ol>
 
-<%= link_to 'SONGS', board_songs_path(@board) %>
+
+<%= link_to 'All Songs', board_songs_path(@board) %>
+<%= link_to 'Add new song', new_board_song_path(@board) %>
+<ol>
+
+<% @ranks.each do |song| %>
+
+  <li><strong>Song Title:</strong> <%= song.name %> | <strong>Rank:</strong> <%= song.rank %></li>
+ 
+<% end %>
+</ol>
