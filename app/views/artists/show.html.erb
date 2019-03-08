@@ -1,2 +1,4 @@
 <h1><%= @artist.name %></h1>
 
+<%= link_to 'All Songs', artist_songs_path(@artist) %>
+<%= link_to 'Add new song', new_artist_song_path(@artist) %>

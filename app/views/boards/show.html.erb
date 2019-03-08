@@ -8,7 +8,7 @@
 
 <% @ranks.each do |song| %>
 
-  <li><strong>Song Title:</strong> <%= song.name %> | <strong>Rank:</strong> <%= song.rank %></li>
+  <li><strong>Song Title:</strong> <%= link_to song.name, board_song_path(@board, song) %> | <strong>Rank:</strong> <%= song.rank %></li>
  
 <% end %>
 </ol>

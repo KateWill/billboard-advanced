@@ -1,7 +1,8 @@
 <h1>All Songs</h1>
 
 <ol>
-  <% @songs.each do |song| %>
-    <li><%= song.name %></li>
+  <% @all_songs.each do |s| %>
+   <li> <%= s.name %></li>
   <% end %>
+    
 </ol>

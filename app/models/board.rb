@@ -14,4 +14,8 @@ class Board < ApplicationRecord
   # self.order(songs.rank)
   # self.order(songs.rank :asc)
   # self.order(:rank)
+  
+  def show_all_songs
+    @all_songs = Songs.all
+  end
 end

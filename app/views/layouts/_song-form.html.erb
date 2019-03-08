@@ -1,7 +1,7 @@
 <div class="form-wrapper">
-<h1>Song Form</h1>
+<h1>Add Song Form</h1>
 
-  <%= form_for [@board, @song]  do |s| %> 
+  <%= @board.id ? form_for [@board, @song]  do |s| : form_for [@artist, @song] do |s| %> 
     <%= s.label :name %>
     <%= s.text_field :name %>
     <%= s.label :rank %>

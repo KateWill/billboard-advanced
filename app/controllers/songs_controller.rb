@@ -1,9 +1,11 @@
 class SongsController < ApplicationController
-  before_action  :set_board_id
+  before_action  :set_board_id, except: [:new]
   before_action :set_song_id, only: [:show, :edit, :update, :destroy]
  
   def index
     @songs = @board.songs
+    # @songs_with_artist = @artist.songs
+    @all_songs = Song.all
   end
 
   def create
@@ -18,12 +20,20 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = @board.songs.new
-    #@song = Song.new
+    if @board
+      @song = @board.songs.new
+    else
+      @song = Song.new
+      
+    end
+    # @song = @board.songs.new
+    # @song = Song.new
+    # @song.set_song
     # render 'layouts/song-form'
   end
 
   def show
+    
   end
 
   
@@ -54,6 +64,9 @@ class SongsController < ApplicationController
   def set_board_id
     @board = Board.find(params[:board_id])
   end 
+  # def set_all_songs
+  #   @all_songs = Board.songs
+  # end
 
   # t.string "name"
   # t.string "rank"
